@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+{% block body %}
+
+<div class="container">
+    <form action="{% url 'CountPage' %}" method="post">
+        {% csrf_token %}
+      <div class="form-group">
+        <label for="fulltextarea">Enter text here</label>
+        <textarea class="form-control" id="fulltextarea" name="fulltextarea" rows="8"></textarea>
+      </div>
+      <div class="form-group">
+        <input type="submit" class="btn btn-info mb-2" value="Count Words">
+      </div>
+    </form>
+</div>
+
+{% endblock %}
